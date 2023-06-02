@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "purpletestapp",
     "name": "PurpleTestApp",
     "slug": "PurpleTestApp",
     "version": "1.0.0",
@@ -11,11 +12,10 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.purple-next.PurpleTestApp",
     },
     "android": {
       "adaptiveIcon": {
@@ -24,7 +24,23 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "flipper": true
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "d932496b-6478-447b-9ba5-965f16f53955"
+      }
     }
   }
 }
